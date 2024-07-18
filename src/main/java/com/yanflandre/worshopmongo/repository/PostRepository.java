@@ -11,7 +11,7 @@ import com.yanflandre.worshopmongo.domain.Post;
 
 @Repository
 public interface PostRepository extends MongoRepository<Post, String> {
-	
+
 	@Query("{ 'title': { $regex: ?0, $options: 'i' } }")
 	List<Post> searchTitle(String text);
 
